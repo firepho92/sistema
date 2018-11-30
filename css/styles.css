@@ -1,0 +1,98 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.appBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(211, 211, 211, 1);
+  padding: 0.5em;
+  box-sizing: border-box;
+  position: fixed;
+  top:0;
+  font-size: 1.5em;
+  max-height: 50px;
+  z-index: 1;
+}
+
+.logo {
+  flex: 1
+}
+
+.categories {
+  flex: 1;
+  text-align: center;
+}
+
+.shoppingCart {
+  flex: 1;
+  text-align: right;
+}
+
+.itemsWrapper {
+  margin-top: 50px;
+  padding: 1em 2em 1em 2em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 250px;
+  width: 500px;
+  max-width: 500px;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+  box-sizing: border-box;
+}
+.item-row-multimedia {
+  display: flex;
+  flex: 4;
+  flex-direction: row;
+}
+.item-row-button {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.item-img {
+  flex: 1;
+}
+.item-text {
+  flex: 1;
+  padding: 5px;
+}
+.item-button {
+  flex: 1;
+  color: #fff;
+  text-align: center;
+  padding-top: 0.5em;
+  border-radius: 3px;
+  font-size: 1.5em;
+  box-sizing: border-box;
+  background-color: #1565C0;
+}
