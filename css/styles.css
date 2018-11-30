@@ -60,8 +60,9 @@ body {
   flex: 1;
   flex-direction: column;
   height: 250px;
-  width: 500px;
-  max-width: 500px;
+  width: 10em;
+  max-width: 30em;
+  min-width: 20em;
   border-radius: 3px;
   margin-bottom: 1.5em;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
