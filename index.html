@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="js/index.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,70 +20,31 @@
         Cart
       </div>
     </div>
-    <div class="itemsWrapper">
-      <div class="row">
-        <div class="item">
-          <div class="item-row-multimedia">
-            <div class="item-img"></div>
-            <div class="item-text">asd</div>
-          </div>
-          <div class="item-row-button">
-            <div class="item-button">asd</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="item-row-multimedia">
-            <div class="item-img"></div>
-            <div class="item-text">asd</div>
-          </div>
-          <div class="item-row-button">
-            <div class="item-button">asd</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="item-row-multimedia">
-            <div class="item-img"></div>
-            <div class="item-text">asd</div>
-          </div>
-          <div class="item-row-button">
-            <div class="item-button">asd</div>
-          </div>
-        </div>  
-      </div>
-      <div class="row">
-        <div class="item">
-          <div class="item-row-multimedia">
-            <div class="item-img"></div>
-            <div class="item-text">asd</div>
-          </div>
-          <div class="item-row-button">
-            <div class="item-button">asd</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="item-row-multimedia">
-            <div class="item-img"></div>
-            <div class="item-text">asd</div>
-          </div>
-          <div class="item-row-button">
-            <div class="item-button">asd</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="item-row-multimedia">
-            <div class="item-img"></div>
-            <div class="item-text">asd</div>
-          </div>
-          <div class="item-row-button">
-            <div class="item-button">asd</div>
-          </div>
-        </div>  
-      </div>
+    <div class="itemsWrapper" id="response">
+      <!--Items are rendered here-->
     </div>
   </div>
-  <form id="form" onsubmit="event.preventDefault();test();">
+
+  <form id="form" onsubmit="event.preventDefault();send();">
     <input type="text" id="a"/>
     <button type="submit">Submit</button>
   </form>
+  <script type="text/javascript">
+    (function send(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://localhost/sistema/cgi-bin/productos.pl', true);
+      xhr.onreadystatechange = function() { // Call a function when the state changes.
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          document.getElementById('response').innerHTML = xhr.response;
+        }
+      }
+      xhr.setRequestHeader(
+        'Content-Type', 
+        'application/x-www-form-urlencoded'
+      );
+      xhr.send();
+    })();
+  </script>
+  <script src="js/index.js?newversion"></script>
 </body>
 </html>
