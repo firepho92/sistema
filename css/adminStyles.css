@@ -38,16 +38,34 @@ body {
   text-align: right;
 }
 
-.itemsWrapper {
+.tablesWrapper {
   margin-top: 50px;
   padding: 1em 2em 1em 2em;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
-
+.tableTitle {
+  text-align: center;
+}
+table {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+table, th, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+}
+th, td {
+  padding: 1em;
+}
+tr:nth-child(even) {
+  background-color: #ddd;
+}
 .row {
   display: flex;
   flex-direction: row;

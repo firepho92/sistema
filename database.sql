@@ -43,3 +43,35 @@ CREATE TABLE IF NOT EXISTS Ventas(
   FOREIGN KEY(producto) REFERENCES Productos(id_producto),
   FOREIGN KEY(ticket) REFERENCES Ticket(id_ticket)
 );
+
+<div class="item" id="item">
+          <div class="item-row-multimedia">
+            <div class="item-img">
+              <img src="img/coca.png" height="192" width="192"/>
+            </div>
+            <div class="item-text">
+              <p>coca</p>
+              <p>ñsdkñajñsldjf</p>
+              <p>asd</p>
+            </div>
+          </div>
+          <div class="item-row-button">
+            <div class="item-button">Agregar a carrito</div>
+          </div>
+        </div>
+
+        <div class="row">
+        <div class="item" id="item">
+          <div class="item-img">
+            <img src="img/coca.png"/>
+          </div>
+          <div class="item-text">
+            <h3>Coca</h3>
+            asd <br/>
+            asd <br/>
+          </div>
+          <div class="item-row-button">
+            <div class="item-button">Agregar a carrito</div>
+          </div>
+        </div>
+      </div>
