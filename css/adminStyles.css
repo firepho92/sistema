@@ -28,9 +28,15 @@ body {
   flex: 1
 }
 
-.categories {
+.tablas {
+  flex: 1;
+  display: flex;
+  text-align: center;
+}
+.tablasItem {
   flex: 1;
   text-align: center;
+  cursor: pointer;
 }
 
 .shoppingCart {

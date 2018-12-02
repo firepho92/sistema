@@ -21,17 +21,20 @@ class Producto {
   }
 
   readProducto() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost/sistema/cgi-bin/readProductos.pl', true);
-    xhr.onreadystatechange = function() { // Call a function when the state changes.
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        document.getElementById('response').innerHTML = xhr.response;
+    return new Promise((resolve, reject) => {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://localhost/sistema/cgi-bin/readProductos.pl?type=cliente', true);
+      xhr.onreadystatechange = function() { // Call a function when the state changes.
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          resolve(xhr.response);
+        }
       }
-    }
-    xhr.setRequestHeader(
-      'Content-Type', 
-      'application/x-www-form-urlencoded'
-    );
-    xhr.send();
+      xhr.setRequestHeader(
+        'Content-Type', 
+        'application/x-www-form-urlencoded'
+      );
+      xhr.send();
+    });
   }
+  
 }
