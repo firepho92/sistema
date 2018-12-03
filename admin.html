@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Administración</title>
-  <link rel="stylesheet" href="css/adminStyles.css?newversio">
+  <link rel="stylesheet" href="css/adminStyles.css?new">
 </head>
 <body>
   <div class="app">
@@ -35,12 +35,11 @@
         <!--Rows are rendered here-->
       </table>
     </div>
+    <p>Agregar <span id="form-table"></span></p>
+    <form id="form" onsubmit="event.preventDefault();send();">
+      
+    </form>
   </div>
-
-  <form id="form" onsubmit="event.preventDefault();send();">
-    <input type="text" id="a"/>
-    <button type="submit">Submit</button>
-  </form>
   <script src="js//responseParser.js"></script>
   <script src="js/models/productos.js"></script>
   <script src="js/models/categorias.js"></script>

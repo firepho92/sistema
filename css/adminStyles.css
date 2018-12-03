@@ -148,3 +148,7 @@ tr:nth-child(even) {
   background-color: #1565C0;
   box-sizing: border-box;
 }
+
+#form {
+  padding: 0 2em 0 2em;
+}

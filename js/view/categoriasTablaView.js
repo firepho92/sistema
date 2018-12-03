@@ -19,4 +19,10 @@ async function renderCategoriasTablaView() {
   render += `</tbody>`;
   document.getElementById('tabla').innerHTML = render;
   document.getElementById('tableTitle').innerHTML = 'Categorias';
+  var form = `
+    <input type="text" name="categoria"/>
+    <button type="submit">Agregar</button>
+  `;
+  document.getElementById('form').innerHTML = form;
+  document.getElementById('form-table').innerHTML = 'categoría';
 }
