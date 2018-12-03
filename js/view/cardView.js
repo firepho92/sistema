@@ -2,7 +2,6 @@ async function renderCards() {
   var productos = new Producto();
   productos = await productos.readProducto();
   productos = splitString(productos);
-  console.log(productos);
   var cont = 0;
   var render = '';
   for(var i = 0; i < productos.length; i++) {
