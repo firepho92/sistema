@@ -24,4 +24,19 @@ async function renderProductosTablaView() {
   render += `</tbody>`;
   document.getElementById('tabla').innerHTML = render;
   document.getElementById('tableTitle').innerHTML = 'Productos';
+  var form = `
+    <form action="/cgi-bin/createProducto.pl" enctype="multipart/form-data">
+      <input type="text" name="producto">
+      <input type="text" name="precio">
+      <input type="text" name="stock">
+      <input type="text" name="descripcion">
+      <p>Subit imagen: <input type="file" name="imagen"></p>
+      <select name="categoria">
+        <option>1</option>
+      </select>
+      <button type="submit">Agregar</button>
+    </form>
+  `;
+  document.getElementById('span-form').innerHTML = form;
+  document.getElementById('form-table').innerHTML = 'Agregar producto';
 }

@@ -1,6 +1,4 @@
 var callback = function(){
-  //var producto = new Producto();
-  //producto.readProducto();
   renderCards();
 };
 

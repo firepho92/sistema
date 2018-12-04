@@ -20,9 +20,18 @@ async function renderCategoriasTablaView() {
   document.getElementById('tabla').innerHTML = render;
   document.getElementById('tableTitle').innerHTML = 'Categorias';
   var form = `
-    <input type="text" name="categoria"/>
-    <button type="submit">Agregar</button>
+    <form id="form" onsubmit="event.preventDefault();createCategoria();">
+      <input type="text" name="categoria" id="categoria/>
+      <button type="submit">Agregar</button>
+    </form>
   `;
-  document.getElementById('form').innerHTML = form;
-  document.getElementById('form-table').innerHTML = 'categoría';
+  document.getElementById('span-form').innerHTML = form;
+  document.getElementById('form-table').innerHTML = 'Agregar categoría';
+}
+
+async function createCategoria() {
+  var categoria = new Categoria();
+  //var form = new FormData(document.getElementById('form'));
+  //form.append('foo', 'foo');
+  //console.log(form);
 }

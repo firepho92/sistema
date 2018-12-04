@@ -26,7 +26,7 @@ class Categoria {
       }
       xhr.setRequestHeader(
         'Content-Type', 
-        'application/x-www-form-urlencoded'
+        'multipart/form-data'
       );
       xhr.send();
     });
