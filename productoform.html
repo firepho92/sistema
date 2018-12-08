@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd"> 
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+    <head> 
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+      <title>File Upload</title> 
+    </head> 
+    <body> 
+      <form action="cgi-bin/upload.pl" method="post" enctype="multipart/form-data" onsubmit="send(event)">
+        <p>Nombre de producto: <input type="text" name="producto" id="producto"/></p>
+        <p>Precio: <input type="text" name="precio" id="precio"/></p>
+        <p>Stock: <input type="text" name="stock" id="stock"/></p>
+        <p>Descripción: <input type="text" name="descripcion" id="descripcion"/></p>
+        <p>Imagen: <input type="file" name="imagen" id="imagen"/></p>
+        <p>Categoria: <select name="categoria" id="categoria"><option value="1">Cat</option></select></p>
+        
+        <p><input type="submit" name="Submit" value="Submit Form" /></p> 
+      </form>
+      <script>
+        function send(e){
+          e.preventDefault();
+          var formData = new FormData();
+          formData.append("producto", document.getElementById("producto").value);
+          formData.append("precio", document.getElementById("precio").value);
+          formData.append("stock", document.getElementById("stock").value);
+          formData.append("descripcion", document.getElementById("descripcion").value);
+          formData.append("imagenNombre", document.getElementById("imagen").files[0].name);
+          formData.append("imagen", document.getElementById("imagen").files[0]);
+          formData.append("categoria", document.getElementById("categoria").value);
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "http://localhost/sistema/cgi-bin/upload.pl", true);
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              console.log(xhr.response);
+            }
+          }
+          xhr.setRequestHeader(
+            'Content-Type', 
+            'multipart/form-data'
+          );
+          xhr.send(formData);
+        }
+      </script> 
+    </body>
+  </html>
+

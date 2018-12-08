@@ -56,7 +56,7 @@ close UPLOADFILE;
 
 my $query = $connection->prepare("INSERT INTO Productos(producto, precio, stock, descripcion, imagen, categoria) VALUES(?, ?, ?, ?, ?, ?)");
 
-if($query->execute($categoria)){
+if($query->execute($categoria, )){
   print "Operacion exitosa";
 }else{
   print "Error en la operacion";
